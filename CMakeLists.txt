@@ -40,4 +40,4 @@ include_directories(${GLAD_DIR}/include)
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} ${GLAD_DIR}/src/glad.c)
 
 # Link to libraries
-target_link_libraries(${PROJECT_NAME} glfw ${GLFW_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} glfw -static-libstdc++ -static-libgcc ${GLFW_LIBRARIES})
