@@ -36,6 +36,9 @@ include_directories(${GLFW_DIR}/include)
 # Glad
 set(GLAD_DIR ${PROJECT_SOURCE_DIR}/lib/glad)
 include_directories(${GLAD_DIR}/include)
+# Prevent GLFW from defining gl symbols and conflicting with Glad if
+# GLFW was included first
+add_definitions(-DGLFW_INCLUDE_NONE)
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES} ${GLAD_DIR}/src/glad.c)
 
