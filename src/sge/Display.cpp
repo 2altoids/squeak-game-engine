@@ -127,20 +127,8 @@ void Display::updateDisplay()
         glfwSwapBuffers(mWindow);
         glClearColor(0, 0, 0.4f, 1);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    /* end of rendering code */    
+    /* end of rendering code */
     
-    //TODO: Keyboard input should be handled in a better way.
-    /*start of input code*/
-        glfwPollEvents();
-        if (glfwGetKey(mWindow, GLFW_KEY_A))
-        {
-            toggleDisplayMode();
-        }
-        if (glfwGetKey(mWindow, GLFW_KEY_ESCAPE))
-        {
-            glfwSetWindowShouldClose(mWindow, GLFW_TRUE);
-        }
-    /* end of input code */
     
     //Update time variables
     double currentFrameTime = glfwGetTime();

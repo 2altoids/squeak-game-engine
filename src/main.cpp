@@ -17,7 +17,22 @@ int main(void) {
 
     //game loop
     while (!glfwWindowShouldClose(display.getWindow())) {
+        //Process pending input
+        //TODO: Keyboard input should be recorded each frame, and prevent multiple "presses" before release
+        glfwPollEvents();
+        if (glfwGetKey(display.getWindow(), GLFW_KEY_A))
+        {
+            display.toggleDisplayMode();
+        }
+        if (glfwGetKey(display.getWindow(), GLFW_KEY_ESCAPE))
+        {
+            glfwSetWindowShouldClose(display.getWindow(), GLFW_TRUE);
+        }
         
+        //Update simulation
+        //TODO: write ECS code here
+        
+        //Render and display new frame
         display.updateDisplay();
         
     }
