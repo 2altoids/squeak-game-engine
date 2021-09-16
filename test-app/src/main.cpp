@@ -2,7 +2,7 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
-#include "sge/Display.h"
+#include <Display.h>
 
 
 #define IMG_WIDTH 640
